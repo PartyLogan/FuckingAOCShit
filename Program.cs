@@ -10,6 +10,7 @@ namespace FuckingAOCShit
             Day1_2015.SolvePart1();
             Day1_2015.SolvePart2();
             Day2_2015.SolvePart1();
+            Day2_2015.SolvePart2();
         }
 
         public static string ReadFileAsOneLine(string file)

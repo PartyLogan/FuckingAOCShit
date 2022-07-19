@@ -28,7 +28,17 @@ namespace FuckingAOCShit._2015
             int total = 0;
             foreach (Present p in Presents)
             {
+                int face1 = p.l + p.l + p.w + p.w;
+                int face2 = p.w + p.w + p.h + p.h;
+                int face3 = p.h + p.h + p.l + p.l;
+                p.smallestFace = face1;
+                if(face2 < p.smallestFace)
+                    p.smallestFace = face2;
+                if (face3 < p.smallestFace)
+                    p.smallestFace = face3;
 
+                p.bow = p.l * p.w * p.h;
+                total += p.bow + p.smallestFace;
             }
 
             Console.WriteLine("The fucks needs {0} total ribbon", total);
@@ -36,14 +46,17 @@ namespace FuckingAOCShit._2015
 
         public class Present
         {
-            int l = 0;
-            int w = 0;
-            int h = 0;
+            public int l = 0;
+            public int w = 0;
+            public int h = 0;
             int side1 = 0;
             int side2 = 0;
             int side3 = 0;
             int smallest = 0;
             public int surface = 0;
+
+            public int smallestFace = 0;
+            public int bow = 0;
 
             public Present(int len, int wid, int hei)
             {
