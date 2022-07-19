@@ -12,12 +12,9 @@ namespace FuckingAOCShit._2015
         {
             string input = Program.ReadFileAsOneLine("2015-Day1.txt");
             int floor = 0;
-            foreach(char c in input)
+            for(int i = 0; i < input.Length; i++)
             {
-                if (c == '(')
-                    floor++;
-                else
-                    floor--;
+                floor = input[i] == '(' ? floor += 1 : floor -= 1;
             }
             Console.WriteLine("Santa must go to floor: {0}", floor);
         }
